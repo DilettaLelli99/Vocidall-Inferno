@@ -270,8 +270,7 @@ declare function app:cercaForename($nome as xs:string) as element()* {
   return $doc                           (: Restituisce i documenti che soddisfano la condizione :)
 };
 
-declare function app:cerca_catalogo_nome($node as node(), $model as map(*)) {
-  let $nome := request:get-parameter("nome", "")
+declare function app:cerca_catalogo_nome($node as node(), $model as map(*), $nome as xs:string?) {
   let $result := app:cercaForename($nome)
   
   return
